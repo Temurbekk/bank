@@ -1,7 +1,16 @@
 import React from "react";
+import { BrowserRouter as Router } from "react-router-dom";
+
+import NavBar from "./Components/NavBar";
+import Routes from "./Components/Routes";
 
 function App() {
-  return <div className="container box has-text-centered">Hello World</div>;
+  return (
+    <Router>
+      <NavBar />
+      <Routes />
+    </Router>
+  );
 }
 
 export default App;
