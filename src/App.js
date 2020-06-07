@@ -25,6 +25,21 @@ function App() {
     console.log(accountBalance);
   }, [credits, debits]);
 
+  const DebitComponent = () => (
+    <Debit
+      accountBalance={accountBalance}
+      debitTotal={debitTotal}
+      debits={debits}
+    />
+  );
+  const CreditComponent = () => (
+    <Credit
+      accountBalance={accountBalance}
+      creditTotal={creditTotal}
+      credits={credits}
+    />
+  );
+
   return (
     <>
       <div>
@@ -38,8 +53,8 @@ function App() {
           <Switch>
             <Route exact path="/" component={Home} />
             <Route path="/Profile" component={Profile} />
-            <Route path="/Credit" component={Credit} />
-            <Route path="/Debit" component={Debit} />
+            <Route path="/Credit" component={CreditComponent} />
+            <Route path="/Debit" component={DebitComponent} />
           </Switch>
         </Router>
       ) : (
