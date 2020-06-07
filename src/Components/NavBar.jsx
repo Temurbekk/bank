@@ -35,9 +35,6 @@ const NavBar = () => {
           <Link to="/Profile" className="navbar-item">
             Profile
           </Link>
-          <Link to="/Login" className="navbar-item">
-            Sign Out
-          </Link>
         </div>
       </div>
     </nav>
