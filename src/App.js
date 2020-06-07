@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from "react";
-import { BrowserRouter as Router } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import axios from "axios";
 
 import NavBar from "./Components/NavBar";
-import Routes from "./Components/Routes";
 import Login from "./Pages/Login";
-import useFetchDebit from "./FetchData/useFetchDebit";
-import useFetchCredit from "./FetchData/useFetchCredit";
+import Profile from "./Pages/Profile";
+import Home from "./Pages/Home";
+import Credit from "./Pages/Credit";
+import Debit from "./Pages/Debit";
 
 function App() {
   const [signedIn, setSignedIn] = useState(false);
@@ -61,12 +62,21 @@ function App() {
     console.log(accountBalance);
   }, [credits, debits]);
 
+  const HomeComponent = () => (
+    <Home accountBalance={0} setSignedIn={setSignedIn} />
+  );
+
   return (
     <>
       {signedIn ? (
         <Router>
           <NavBar />
-          <Routes setSignedIn={setSignedIn} />
+          <Switch>
+            <Route exact path="/" component={HomeComponent} />
+            <Route path="/Profile" component={Profile} />
+            <Route path="/Credit" component={Credit} />
+            <Route path="/Debit" component={Debit} />
+          </Switch>
         </Router>
       ) : (
         <Login setSignedIn={setSignedIn} />
