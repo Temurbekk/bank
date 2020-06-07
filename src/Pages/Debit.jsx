@@ -1,7 +1,7 @@
 import React from "react";
 import Card from "../Components/Card";
 
-function Debit(props) {
+const Debit = (props) => {
   return (
     <div>
       <div>This is the debit page</div>
@@ -25,6 +25,6 @@ function Debit(props) {
       </div>
     </div>
   );
-}
+};
 
 export default Debit;

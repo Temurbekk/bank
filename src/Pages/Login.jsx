@@ -1,6 +1,6 @@
 import React from "react";
 
-function Login({ setSignedIn }) {
+const Login = ({ setSignedIn }) => {
   const onClick = () => {
     setSignedIn(true);
   };
@@ -18,6 +18,6 @@ function Login({ setSignedIn }) {
       </form>
     </>
   );
-}
+};
 
 export default Login;

@@ -1,6 +1,6 @@
 import React from "react";
 
-function Home({ setSignedIn, accountBalance }) {
+const Home = ({ setSignedIn, accountBalance }) => {
   return (
     <>
       Current Account Number: {accountBalance}
@@ -9,6 +9,6 @@ function Home({ setSignedIn, accountBalance }) {
       </div>
     </>
   );
-}
+};
 
 export default Home;

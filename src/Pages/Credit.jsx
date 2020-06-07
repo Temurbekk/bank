@@ -1,7 +1,7 @@
 import React from "react";
 import Card from "../Components/Card";
 
-function Credit(props) {
+const Credit = (props) => {
   return (
     <div>
       <div>This is the Credit page</div>
@@ -25,6 +25,6 @@ function Credit(props) {
       </div>
     </div>
   );
-}
+};
 
 export default Credit;
