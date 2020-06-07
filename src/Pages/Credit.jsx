@@ -1,4 +1,5 @@
 import React from "react";
+import Card from "../Components/Card";
 
 function Credit(props) {
   return (
@@ -14,11 +15,11 @@ function Credit(props) {
         {props.credits.map((credit) => {
           const date = new Date(credit.date);
           return (
-            <div>
-              <div>Description: {credit.description}</div>
-              <div>Price: {credit.amount}</div>
-              <div>Date: {date.toLocaleDateString()}</div>
-            </div>
+            <Card
+              description={credit.description}
+              amount={credit.amount}
+              date={date}
+            />
           );
         })}
       </div>

@@ -1,4 +1,5 @@
 import React from "react";
+import Card from "../Components/Card";
 
 function Debit(props) {
   return (
@@ -14,11 +15,11 @@ function Debit(props) {
         {props.debits.map((debit) => {
           const date = new Date(debit.date);
           return (
-            <div>
-              <div>Description: {debit.description}</div>
-              <div>Price: {debit.amount}</div>
-              <div>Date: {date.toLocaleDateString()}</div>
-            </div>
+            <Card
+              description={debit.description}
+              amount={debit.amount}
+              date={date}
+            />
           );
         })}
       </div>
