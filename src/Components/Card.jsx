@@ -1,6 +1,6 @@
 import React from "react";
 
-function Card(props) {
+const Card = (props) => {
   return (
     <div>
       <div>Description: {props.description}</div>
@@ -8,6 +8,6 @@ function Card(props) {
       <div>Date: {props.date.toLocaleDateString()}</div>
     </div>
   );
-}
+};
 
 export default Card;

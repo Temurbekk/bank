@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 
-function useFetchCredit() {
+const useFetchCredit = () => {
   const [credits, setCredits] = useState([]);
   const [creditTotal, setCreditTotal] = useState(0);
   useEffect(() => {
@@ -22,6 +22,6 @@ function useFetchCredit() {
       });
   }, []);
   return { credits, creditTotal };
-}
+};
 
 export default useFetchCredit;

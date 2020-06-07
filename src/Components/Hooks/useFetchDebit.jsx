@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 
-function useFetchDebit() {
+const useFetchDebi = () => {
   const [debits, setDebits] = useState([]);
   const [debitTotal, setDebitTotal] = useState(0);
   useEffect(() => {
@@ -22,6 +22,6 @@ function useFetchDebit() {
       });
   }, []);
   return { debits, debitTotal };
-}
+};
 
 export default useFetchDebit;
