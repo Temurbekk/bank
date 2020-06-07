@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import { useState, useEffect } from "react";
+import axios from "axios";
 
 function useFetchCredit() {
   const [credits, setCredits] = useState([]);
