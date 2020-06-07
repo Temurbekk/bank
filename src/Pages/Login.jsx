@@ -5,9 +5,18 @@ function Login({ setSignedIn }) {
     setSignedIn(true);
   };
   return (
-    <div className="button" onClick={onClick}>
-      Log In
-    </div>
+    <>
+      <div>Welcome to React Bank</div>
+      <form action="">
+        <label>Username</label>
+        <input type="text" placeholder="username" />
+        <label>Password</label>
+        <input type="text" placeholder="Password" />
+        <div className="button" onClick={onClick}>
+          Log In
+        </div>
+      </form>
+    </>
   );
 }
 
