@@ -34,28 +34,42 @@ const Credit = (props) => {
     addCredit(credit);
   };
   return (
-    <div>
-      <div>This is the Credit page</div>
-      <div>Current Account Balance {props.accountBalance}</div>
-      <div> Credit Total:{props.creditTotal}</div>
-      <div>Add Credit spending</div>
+    <div className="container">
+      <div className="title is-1 has-text-centered">
+        This is the Credit page
+      </div>
+      <div className="box">
+        <div className="is-size-4">
+          Current Account Balance {props.accountBalance}
+        </div>
+        <div className="is-size-5"> Credit Total: {props.creditTotal}</div>
+      </div>
+      <div className="title">Add Credit spending</div>
       <div>
         <form onSubmit={handleSubmit}>
-          <input
-            className=""
-            name="description"
-            value={credit.description}
-            onChange={handleChange}
-            placeholder="Enter description"
-          />
-          <input
-            className=""
-            name="amount"
-            value={credit.amount}
-            onChange={handleChange}
-            placeholder="Enter amount"
-          />
-          <button>Add</button>
+          <div className="columns section">
+            <input
+              className="input column  mr-3"
+              name="description"
+              value={credit.description}
+              onChange={handleChange}
+              placeholder="Enter description"
+            />
+
+            <input
+              className="input column  mr-3"
+              name="amount"
+              value={credit.amount}
+              onChange={handleChange}
+              placeholder="Enter amount"
+            />
+            <div
+              className="button is-primary column is-one-fifth"
+              onClick={handleSubmit}
+            >
+              Add
+            </div>
+          </div>
         </form>
       </div>
       <div>
