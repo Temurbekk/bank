@@ -17,7 +17,7 @@ function App() {
   const [accountBalance, setAccountBalance] = useState(0);
   const [user, setUser] = useState({
     name: "Temur",
-    account_num: 1234,
+    accountNum: 1234,
   });
 
   useEffect(() => {
@@ -39,6 +39,11 @@ function App() {
       credits={credits}
     />
   );
+  const HomeComponent = () => <Home accountBalance={accountBalance} />;
+
+  const ProfileComponent = () => (
+    <Profile userName={user.name} accountNum={user.accountNum} />
+  );
 
   return (
     <>
@@ -51,8 +56,8 @@ function App() {
         <Router>
           <NavBar />
           <Switch>
-            <Route exact path="/" component={Home} />
-            <Route path="/Profile" component={Profile} />
+            <Route exact path="/" component={HomeComponent} />
+            <Route path="/Profile" component={ProfileComponent} />
             <Route path="/Credit" component={CreditComponent} />
             <Route path="/Debit" component={DebitComponent} />
           </Switch>

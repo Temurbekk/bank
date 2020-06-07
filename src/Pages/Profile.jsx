@@ -1,7 +1,7 @@
 import React from "react";
 
-function Profile() {
-  return <div>This is the profile page</div>;
+function Profile(props) {
+  return <div>{props.accountNum}</div>;
 }
 
 export default Profile;
