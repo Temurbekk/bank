@@ -39,7 +39,9 @@ function App() {
       credits={credits}
     />
   );
-  const HomeComponent = () => <Home accountBalance={accountBalance} />;
+  const HomeComponent = () => (
+    <Home accountBalance={accountBalance} setSignedIn={setSignedIn} />
+  );
 
   const ProfileComponent = () => (
     <Profile userName={user.name} accountNum={user.accountNum} />
@@ -47,11 +49,6 @@ function App() {
 
   return (
     <>
-      <div>
-        {credits.map((credit) => {
-          return <div>{credit.description}</div>;
-        })}
-      </div>
       {signedIn ? (
         <Router>
           <NavBar />

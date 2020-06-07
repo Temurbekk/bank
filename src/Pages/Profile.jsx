@@ -1,7 +1,12 @@
 import React from "react";
 
-function Profile(props) {
-  return <div>{props.accountNum}</div>;
-}
+const Profile = (props) => {
+  return (
+    <>
+      <div>{props.userName}'s Profile</div>
+      <div>Account Number: {props.accountNum}</div>
+    </>
+  );
+};
 
 export default Profile;
