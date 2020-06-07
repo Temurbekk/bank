@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router } from "react-router-dom";
+import axios from "axios";
 
 import NavBar from "./Components/NavBar";
 import Routes from "./Components/Routes";
@@ -62,9 +63,9 @@ function App() {
 
   return (
     <>
-      <NavBar />
       {signedIn ? (
         <Router>
+          <NavBar />
           <Routes setSignedIn={setSignedIn} />
         </Router>
       ) : (
