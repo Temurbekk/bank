@@ -63,7 +63,26 @@ function App() {
   }, [credits, debits]);
 
   const HomeComponent = () => (
-    <Home accountBalance={0} setSignedIn={setSignedIn} />
+    <Home accountBalance={accountBalance} setSignedIn={setSignedIn} />
+  );
+  const ProfileComponent = () => (
+    <Profile userName={user.name} account_num={user.account_num} />
+  );
+
+  const CreditsComponent = () => (
+    <Credit
+      accountBalance={accountBalance}
+      credits={credits}
+      creditTotal={creditTotal}
+    />
+  );
+
+  const DebitsComponent = () => (
+    <Debit
+      accountBalance={accountBalance}
+      debits={debits}
+      debitTotal={debitTotal}
+    />
   );
 
   return (
@@ -73,9 +92,9 @@ function App() {
           <NavBar />
           <Switch>
             <Route exact path="/" component={HomeComponent} />
-            <Route path="/Profile" component={Profile} />
-            <Route path="/Credit" component={Credit} />
-            <Route path="/Debit" component={Debit} />
+            <Route path="/Profile" component={ProfileComponent} />
+            <Route path="/Credit" component={CreditsComponent} />
+            <Route path="/Debit" component={DebitsComponent} />
           </Switch>
         </Router>
       ) : (
