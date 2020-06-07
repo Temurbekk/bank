@@ -34,28 +34,40 @@ const Debit = (props) => {
     addDebit(debit);
   };
   return (
-    <div>
-      <div>This is the Debit page</div>
-      <div>Current Account Balance {props.accountBalance}</div>
-      <div> Debit Total:{props.debitTotal}</div>
-      <div>Add Debit spending</div>
+    <div className="container">
+      <div className="title is-1 has-text-centered">This is the Debit page</div>
+      <div className="box">
+        <div className="is-size-4">
+          Current Account Balance {props.accountBalance}
+        </div>
+        <div className="is-size-5"> Debit Total: {props.debitTotal}</div>
+      </div>
+      <div className="title">Add Debit spending</div>
       <div>
         <form onSubmit={handleSubmit}>
-          <input
-            className=""
-            name="description"
-            value={debit.description}
-            onChange={handleChange}
-            placeholder="Enter description"
-          />
-          <input
-            className=""
-            name="amount"
-            value={debit.amount}
-            onChange={handleChange}
-            placeholder="Enter amount"
-          />
-          <button>Add</button>
+          <div className="columns section">
+            <input
+              className="input column  mr-3"
+              name="description"
+              value={debit.description}
+              onChange={handleChange}
+              placeholder="Enter description"
+            />
+
+            <input
+              className="input column  mr-3"
+              name="amount"
+              value={debit.amount}
+              onChange={handleChange}
+              placeholder="Enter amount"
+            />
+            <div
+              className="button is-primary column is-one-fifth"
+              onClick={handleSubmit}
+            >
+              Add
+            </div>
+          </div>
         </form>
       </div>
       <div>
