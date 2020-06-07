@@ -1,7 +1,14 @@
 import React from "react";
 
-function Login() {
-  return <div>This is the login page</div>;
+function Login({ setSignedIn }) {
+  const onClick = () => {
+    setSignedIn(true);
+  };
+  return (
+    <div className="button" onClick={onClick}>
+      Sign In
+    </div>
+  );
 }
 
 export default Login;
