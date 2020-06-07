@@ -21,7 +21,7 @@ const useFetchCredit = () => {
         console.error(error);
       });
   }, []);
-  return { credits, creditTotal };
+  return { credits, setCredits, creditTotal };
 };
 
 export default useFetchCredit;

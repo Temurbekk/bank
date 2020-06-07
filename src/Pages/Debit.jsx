@@ -2,6 +2,14 @@ import React from "react";
 import Card from "../Components/Card";
 
 const Debit = (props) => {
+  const addDebit = (debit) => {
+    debit.id = (Math.random() * 300).toString();
+    const date = new Date();
+    debit.date = date.toISOString();
+    const newDebits = [debit, ...props.debits];
+
+    props.setDebits(newDebits);
+  };
   return (
     <div>
       <div>This is the debit page</div>
@@ -10,7 +18,7 @@ const Debit = (props) => {
       <div>Add Debit spending</div>
       <input type="text" placeholder="Enter a description..." />
       <input type="text" placeholder="Enter dollar amount" />
-      <div>Add</div>
+      <div onClick={addDebit}>Add</div>
       <div>
         {props.debits.map((debit) => {
           const date = new Date(debit.date);

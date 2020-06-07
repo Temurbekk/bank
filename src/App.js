@@ -11,8 +11,8 @@ import useFetchDebit from "./Components/Hooks/useFetchDebit";
 import useFetchCredit from "./Components/Hooks/useFetchCredit";
 
 function App() {
-  const { debits, debitTotal } = useFetchDebit();
-  const { credits, creditTotal } = useFetchCredit();
+  const { debits, setDebits, debitTotal } = useFetchDebit();
+  const { credits, setCredits, creditTotal } = useFetchCredit();
   const [signedIn, setSignedIn] = useState(false);
   const [accountBalance, setAccountBalance] = useState(0);
   const [user, setUser] = useState({
@@ -22,7 +22,6 @@ function App() {
 
   useEffect(() => {
     setAccountBalance(creditTotal - debitTotal);
-    console.log(accountBalance);
   }, [credits, debits]);
 
   const DebitComponent = () => (
@@ -30,6 +29,7 @@ function App() {
       accountBalance={accountBalance}
       debitTotal={debitTotal}
       debits={debits}
+      setDebits={setDebits}
     />
   );
   const CreditComponent = () => (
@@ -37,6 +37,7 @@ function App() {
       accountBalance={accountBalance}
       creditTotal={creditTotal}
       credits={credits}
+      setCredits={setCredits}
     />
   );
   const HomeComponent = () => (

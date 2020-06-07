@@ -21,7 +21,7 @@ const useFetchDebit = () => {
         console.error(error);
       });
   }, []);
-  return { debits, debitTotal };
+  return { debits, setDebits, debitTotal };
 };
 
 export default useFetchDebit;
