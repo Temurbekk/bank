@@ -6,7 +6,7 @@ function Login({ setSignedIn }) {
   };
   return (
     <div className="button" onClick={onClick}>
-      Sign In
+      Log In
     </div>
   );
 }
