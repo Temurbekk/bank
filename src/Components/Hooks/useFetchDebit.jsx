@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 
-const useFetchDebi = () => {
+const useFetchDebit = () => {
   const [debits, setDebits] = useState([]);
   const [debitTotal, setDebitTotal] = useState(0);
   useEffect(() => {
